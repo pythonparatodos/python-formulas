@@ -32,3 +32,9 @@ parser.add_argument(
     help="Logger level, values available: DEBUG, INFO, WARNING, ERROR, CRITICAL",
     default="ERROR"
 )
+
+# And finally parse the args
+args = vars(parser.parse_args())
+
+# And get the args
+multiple_args = args.get("multiple_args")
