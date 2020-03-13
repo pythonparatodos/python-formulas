@@ -5,6 +5,13 @@ parser = argparse.ArgumentParser(
   "Main text"
 )
 
+# Add Positional argument
+parser.add_argument(
+  "positional_argument", 
+  type=str, 
+  help="Positional argument"
+)
+
 # Add multiple arguments
 parser.add_argument(
   "multiple_args", 
