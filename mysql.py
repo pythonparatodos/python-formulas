@@ -2,6 +2,22 @@
 Este formula asume la instalación de [mysqlclient](https://pypi.org/project/mysqlclient/)
 
 Para mas ayuda visite la [documentacion oficial](https://mysqlclient.readthedocs.io/index.html)
+
+Recuerde tener una instancia ejecutandose localmente, o en un equipo remoto (si este es el caso, verifique que los puertos
+correspondientes se encuentren abiertos que MySQL/MariaDB este oyendo en la interfaz de red a la que usted está accediend)
+
+Para probar con Docker
+
+```bash
+docker run \
+    --name mariadb \
+    -e MYSQL_ROOT_PASSWORD=my-secret-pw \
+    -p 3306:3306 \
+    -v ${PWD}/data:/var/lib/mysql
+    -d mariadb
+```
+
+En este caso ${PWD} hace referencia a su directorio actual,  pero puede reemplazar esto por una ruta absoluta
 """
 # Importar el paquete
 import _mysql
